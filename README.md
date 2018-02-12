@@ -2,7 +2,7 @@
 ----------
 **# Example #1**
 
-    pack = ui.RegisterStructClass('a b c')(15, {}, [])
+    pack = RegisterStructClass('a b c')(15, {}, [])
     pack.a += 50
     pack.b.update({0: 250})
     pack.c.append(100)
