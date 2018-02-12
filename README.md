@@ -12,4 +12,4 @@
     def Transfer(self, c_pData):
 		print(c_pData.szName, c_pData.lX, c_pData.lY)
 
-    self.Transfer(ui.RegisterStructClass('szName lX lY')(GetName(), GetX(), GetY()))
+    self.Transfer(RegisterStructClass('szName lX lY')(GetName(), GetX(), GetY()))
