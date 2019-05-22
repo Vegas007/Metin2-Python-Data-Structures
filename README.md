@@ -20,17 +20,18 @@ UPDATE player.item_proto SET name = vnum
 So, the structure of *etc_drop_item.txt* is based on dropping a item with a probability from a specific mob where that mob have the ***item vnum*** attached in column ***mob_drop*** -> ***drop_item***.
 ```sql
 SELECT DISTINCT locale_name, vnum, drop_item FROM player.mob_proto where drop_item >= 10;
-- - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
+
 | 	locale_name  	| 	vnum		|	drop_item	| 
 | ----------------- | ------------- | ------------- |
 | Wolf  			| 		102	  	| 	30028  		|
 | Alpha Wolf		| 		103	  	| 	30069		|
 | Alpha Blue Wolf 	| 		105	  	| 	30027		|
 | Grey Wolf			| 		106	  	| 	30070		|
-- - - - - - - - - - - - - - - - - - - - - - - - - - -
-```
+
 # How-To-Fix
 *Default structure:*
+
 | item_proto.name  | prob | 
 | ------------- | ------------- |
 | 늑대발톱  | 2.0  |
