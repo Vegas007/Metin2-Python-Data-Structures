@@ -1,14 +1,14 @@
 
-# What's the problem?
+# What's the issue?
 ```c
 SYSERR: Aug 22 18:36:42.624296 :: ReadEtcDropItemFile: No such an item (name:  Èò»ö  ´ó±â+) SYSERR:  
 Aug 22 18:36:42.624379 :: Boot: cannot load ETCDropItem: locale/germany/etc_drop_item.txt
 ```
-Some people fixed it by replacing the **column** name from **item_proto** (which is korean) with **vnum**.
+Some people fixed it long time ago by replacing the **column** name from **item_proto** (which is korean) with **vnum**.
 <p align="center">
   <img src="https://i.gyazo.com/9adce9af6771f49f6ab51b91f505a597.png" width="292px" height="68px"/></p>
 
-If you want to do it like this and don't want the source change (from below) or you don't have the source code of your game core. You can do a update query and copy the **vnum** to **name** just if the **vnum** from **item_proto** exists inside of **mob_proto.drop_item** by a specific mob.  
+If you want to do it like this and don't want the source change (from below) *or* you don't have the source code of your game core. You can do a update query and copy the **vnum** to **name** just if the **vnum** from **item_proto** exists inside of **mob_proto.drop_item** by a specific mob.  
 
 ```sql
 UPDATE player.item_proto SET name = vnum
@@ -30,7 +30,8 @@ SELECT DISTINCT locale_name, vnum, drop_item FROM player.mob_proto where drop_it
 | Grey Wolf			| 		106	  	| 	30070		|
 
 # How-To-Fix
-*Default structure:*
+
+ - [ ] Default structure:
 
 | item_proto.name  | prob | 
 | ------------- | ------------- |
@@ -39,7 +40,7 @@ SELECT DISTINCT locale_name, vnum, drop_item FROM player.mob_proto where drop_it
 | 늑대털  | 2.0  |
 | 멧돼지의 어금니  | 2.0  | 
 
-*With the fix you can use both of methods.*
+ - [x] With the fix you can use both of methods.
 
 | item_proto.[name or vnum]  | prob |
 | ------------- | ------------- |
