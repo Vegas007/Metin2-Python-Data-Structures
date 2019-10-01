@@ -10,8 +10,18 @@
 ```
 **# Example #2.**
 ```py
-    def Transfer(self, c_pData):
-		print(c_pData.szName, c_pData.lX, c_pData.lY)
+    def Transfer(self, p):
+		print(p.szName, p.lX, p.lY)
 
     self.Transfer(RegisterStructClass('szName lX lY')(GetName(), GetX(), GetY()))
+```
+**# Example #3.**
+```py
+config = ui.RegisterStructClass('width height default_size_dict rank_list text')(450, 300, {'w': 400, 'h': 500}, [1, 2, 3], 'Metin2')
+
+print (
+	config.width, config.height, config.text,
+	config.default_size_dict.get('w'), config.default_size_dict.get('h'),
+	config.rank_list
+)
 ```
